@@ -1,3 +1,4 @@
+'use client'
 import Quotes from '../data.json'
 
 export default function Home() {
