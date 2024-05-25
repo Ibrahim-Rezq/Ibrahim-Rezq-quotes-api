@@ -13,19 +13,14 @@ export default function Home() {
 
         switch (type) {
             case 'year':
-                value = (today.getMonth() / 12) * 100
-                break
+                return (value = (today.getMonth() / 12) * 100)
             case 'month':
-                value = (today.getDate() / daysInMonth()) * 100
-                break
+                return (value = (today.getDate() / daysInMonth()) * 100)
             case 'week':
-                value = (today.getDay() / 7) * 100
-                break
+                return (value = (today.getDay() / 7) * 100)
             case 'day':
-                value = (today.getHours() / 24) * 100
-                break
+                return (value = (today.getHours() / 24) * 100)
         }
-        return value
     }
 
     return (
@@ -59,7 +54,7 @@ export default function Home() {
 const ProgressBar = ({
     val,
     name,
-    color,
+    color = 'bg-blue-600',
 }: PropsWithChildren & { val: number; name: string; color: string }) => {
     return (
         <div className='flex justify-between align-middle h-fit'>
@@ -67,9 +62,7 @@ const ProgressBar = ({
             <div className='min-w-64 w-full max-w-[90%] '>
                 <div className='w-full bg-gray-200 rounded-full dark:bg-gray-700'>
                     <div
-                        className={`${
-                            color ? color : 'bg-blue-600'
-                        } text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
+                        className={`${color} text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`}
                         style={{ width: `${val}%` }}
                     >
                         {val.toFixed(2)}%
