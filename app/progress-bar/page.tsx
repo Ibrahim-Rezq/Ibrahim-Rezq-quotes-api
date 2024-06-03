@@ -24,7 +24,7 @@ export default function Home() {
     }
 
     return (
-        <main className='w-screen h-screen bg-[#191919] flex'>
+        <main className='w-screen h-screen bg-[#00000000] flex'>
             <div className='flex flex-col gap-2 w-full max-w-2xl p-4 m-auto'>
                 <ProgressBar
                     val={progress('year')}

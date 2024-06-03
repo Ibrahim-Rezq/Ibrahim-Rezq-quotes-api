@@ -7,8 +7,8 @@ export default async function Home() {
         quotes[Math.floor(Math.random() * quotes.length)]
 
     return (
-        <main className='w-screen h-screen flex bg-[#191919] '>
-            <blockquote className='m-auto p-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800 max-w-2xl'>
+        <main className='w-screen h-screen flex bg-[#19191900] '>
+            <blockquote className='m-auto p-4 border-s-4 border-[#00000000] bg-[#00000000] dark:border-[#00000000] dark:bg-[#00000000] max-w-2xl'>
                 <p className='text-xl italic font-medium leading-relaxed '>
                     &quot;{content}&quot;
                 </p>
