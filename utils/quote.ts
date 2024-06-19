@@ -1,12 +1,5 @@
 import db from './db'
 
-// Define type for Quote data
-type Quote = {
-    content: string
-    author: string
-    source: string
-}
-
 // Create Quote function (uses type for clarity)
 export async function createQuote(data: Quote): Promise<Quote> {
     return await db.quote.create({ data })

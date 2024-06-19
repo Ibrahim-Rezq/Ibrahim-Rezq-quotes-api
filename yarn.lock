@@ -1623,6 +1623,11 @@ is-regex@^1.1.4:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
 
+is-rtl-text@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/is-rtl-text/-/is-rtl-text-0.0.2.tgz#f8cde171d05a002b129e2cd42a030d2142ea27fd"
+  integrity sha512-kd6yxXHPW12vAuNDP5dFy0gIWYaiDMoskIir0soyrLiEsnesWNKUABTPtHgiJ0tRuV3FHstm1UuH/q/C2c5n7Q==
+
 is-set@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/is-set/-/is-set-2.0.3.tgz#8ab209ea424608141372ded6e0cb200ef1d9d01d"
