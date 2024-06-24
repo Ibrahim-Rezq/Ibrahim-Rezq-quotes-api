@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import { updateQuote } from '../quote'
 
 export default async function updateQuoteAction(formData: FormData) {
@@ -15,6 +16,8 @@ export default async function updateQuoteAction(formData: FormData) {
             await updateQuote(id, rawFormData)
         } catch (error) {
             console.error('Failed to update quote:', error)
+        } finally {
+            redirect(`/quotes/${id}`)
         }
     } else {
         console.error('Invalid ID:', id)

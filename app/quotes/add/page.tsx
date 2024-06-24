@@ -1,15 +1,21 @@
 import { createQuote } from '@/utils/quote'
+import { redirect } from 'next/navigation'
 
 export default function AddQuote() {
     async function CreateQuoteAction(formData: FormData) {
         'use server'
-
-        const rawFormData = {
-            content: formData.get('content')?.toString() ?? '',
-            author: formData.get('author')?.toString() ?? '',
-            source: formData.get('source')?.toString() ?? '',
+        try {
+            const rawFormData = {
+                content: formData.get('content')?.toString() ?? '',
+                author: formData.get('author')?.toString() ?? '',
+                source: formData.get('source')?.toString() ?? '',
+            }
+            await createQuote(rawFormData)
+        } catch (error) {
+            console.error('Failed to add quote:', error)
+        } finally {
+            redirect(`/quotes`)
         }
-        await createQuote(rawFormData)
     }
 
     return (

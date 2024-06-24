@@ -25,10 +25,11 @@ export default function NotFound() {
                 >
                     Go Back A Page
                 </button>
-                <Link href='/'>
-                    <a className='rounded bg-cyan-500 px-4 py-2 font-semibold text-white hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-cyan-300'>
-                        Go Back Home
-                    </a>
+                <Link
+                    href='/'
+                    className='rounded bg-cyan-500 px-4 py-2 font-semibold text-white hover:bg-cyan-600 focus:ring-4 focus:outline-none focus:ring-cyan-300'
+                >
+                    Go Back Home
                 </Link>
             </div>
         </div>

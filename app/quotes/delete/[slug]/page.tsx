@@ -1,5 +1,5 @@
 import QuoteUpdateForm from '@/components/quote-update-form'
-import { getQuoteById } from '@/utils/quote'
+import { deleteQuote, getQuoteById } from '@/utils/quote'
 import { redirect } from 'next/navigation'
 
 interface QuoteEditPageProps {
@@ -15,11 +15,13 @@ export default async function QuoteEditPage({ params }: QuoteEditPageProps) {
         return redirect('/404')
     }
 
-    const quote = await getQuoteById(slug)
+    const quote = await deleteQuote(slug)
 
     if (!quote) {
-        return redirect('/404')
+        return redirect('/quotes')
     }
 
-    return <QuoteUpdateForm slug={slug} quote={quote} />
+    return redirect('/404')
 }
+// نفسك إن لم تشغلها بالحق شغلتك بالباطل
+// الإمام الشافعي
