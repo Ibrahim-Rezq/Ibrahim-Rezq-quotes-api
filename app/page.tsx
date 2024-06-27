@@ -11,6 +11,14 @@ export default async function Home() {
         <>
             <main className='min-w-full min-h-full flex justify-center items-center'>
                 <Quote quote={quote} />
+                <form
+                    action={async () => {
+                        'use server'
+                        await signIn()
+                    }}
+                >
+                    <button type='submit'>Sign In</button>
+                </form>
             </main>
         </>
     )
