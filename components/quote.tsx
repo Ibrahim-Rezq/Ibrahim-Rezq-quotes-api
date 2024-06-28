@@ -23,45 +23,25 @@ const Quote: React.FC<QuoteProps> = ({ quote }) => {
             <blockquote>
                 <p
                     dir={isRTL ? 'rtl' : 'ltr'}
-                    className='text-2xl italic font-medium text-gray-900 dark:text-white'
+                    className='text-2xl italic font-medium text-accent'
                 >
                     &quot;{content}&quot;
                 </p>
             </blockquote>
             <figcaption className='flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse'>
-                {/* <img
-                    className='w-6 h-6 rounded-full'
-                    src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png'
-                    alt='profile picture'
-                /> */}
                 <div
-                    className='flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700'
+                    className='flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 '
                     dir={isRTL ? 'rtl' : 'ltr'}
                 >
-                    <cite className='pe-3 font-medium text-gray-900 dark:text-white'>
+                    <cite className='pe-3 font-medium text-success '>
                         {author}
                     </cite>
-                    <cite className='ps-3 text-sm text-gray-500 dark:text-gray-400'>
+                    <cite className='ps-3 text-sm text-base-content '>
                         {source}{' '}
                     </cite>
                 </div>
             </figcaption>
         </figure>
-        // <blockquote
-        //     dir={isRTL ? 'rtl' : 'ltr'}
-        //     className='m-auto p-4 border-s-4 border-transparent bg-transparent dark:border-transparent dark:bg-transparent w-full max-w-2xl'
-        // >
-        //     <p className='text-xl italic font-medium leading-relaxed'>
-        //         &quot;{content}&quot;
-        //     </p>
-        //     <cite>- {author}</cite>
-        //     {source && (
-        //         <>
-        //             <br />
-        //             <cite className='ps-4'>- {source}</cite>
-        //         </>
-        //     )}
-        // </blockquote>
     )
 }
 

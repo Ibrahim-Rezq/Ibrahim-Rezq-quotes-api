@@ -1,4 +1,4 @@
-import QuoteEdit from '@/components/quote-edit'
+import Quote from '@/components/quote'
 import { getQuoteById } from '@/utils/quote'
 import { redirect } from 'next/navigation'
 
@@ -13,7 +13,7 @@ export default async function SingleQuote({
         if (quote)
             return (
                 <main className='min-w-full min-h-full flex justify-center items-center'>
-                    <QuoteEdit quote={quote} />
+                    <Quote quote={quote} />
                 </main>
             )
         return redirect('/404')

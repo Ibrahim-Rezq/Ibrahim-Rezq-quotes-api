@@ -1,52 +1,49 @@
 import React from 'react'
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from './ui/dropdown-menu'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { LogOut, Settings } from 'lucide-react'
 import { auth, signOut, signIn } from '@/auth'
 const UserAvaterMenu = async () => {
     const session = await auth()
     console.log(session)
     if (session)
         return (
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild className='cursor-pointer'>
-                    <Avatar>
-                        <AvatarImage src='https://github.com/shadcn.png' />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className='w-56'>
-                    <DropdownMenuLabel>
-                        {session.user?.email || 'My Account'}
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        <Settings className='mr-2 h-4 w-4' />
-                        <span>Settings</span>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <form
-                        action={async () => {
-                            'use server'
-                            await signOut()
-                        }}
-                    >
-                        <button type='submit' className='w-full'>
-                            <DropdownMenuItem>
-                                <LogOut className='mr-2 h-4 w-4' />
-                                <span>Log out</span>
-                            </DropdownMenuItem>
-                        </button>
-                    </form>
-                </DropdownMenuContent>
-            </DropdownMenu>
+            <div className='dropdown dropdown-end'>
+                <div
+                    tabIndex={0}
+                    role='button'
+                    className='btn btn-ghost btn-circle avatar'
+                >
+                    <div className='w-10 rounded-full'>
+                        <img
+                            alt='Tailwind CSS Navbar component'
+                            src='https://images.pexels.com/photos/774731/pexels-photo-774731.jpeg?cs=srgb&dl=pexels-kerber-774731.jpg&fm=jpg'
+                        />
+                    </div>
+                </div>
+                <ul
+                    tabIndex={0}
+                    className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow'
+                >
+                    <li>
+                        <a className='justify-between'>{session.user?.email}</a>
+                    </li>
+                    {/*// TODO: Uncoment this when you add the settings page  */}
+                    {/* <li>
+                        <a>Settings</a>
+                    </li> */}
+                    <div className='divider divider-neutral m-0 px-2'></div>
+                    <li>
+                        <form
+                            action={async () => {
+                                'use server'
+                                await signOut()
+                            }}
+                        >
+                            <button type='submit' className='w-full'>
+                                Log Out
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         )
     return (
         <form
@@ -55,7 +52,7 @@ const UserAvaterMenu = async () => {
                 await signIn()
             }}
         >
-            <button type='submit'>Sign In</button>
+            <button type='submit'>Log In</button>
         </form>
     )
 }

@@ -10,7 +10,8 @@ export default function AddQuote() {
                 author: formData.get('author')?.toString() ?? '',
                 source: formData.get('source')?.toString() ?? '',
             }
-            await createQuote(rawFormData)
+            // TODO: Uncomment this when you go public
+            // await createQuote(rawFormData)
         } catch (error) {
             console.error('Failed to add quote:', error)
         } finally {
